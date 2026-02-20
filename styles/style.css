@@ -1,0 +1,236 @@
+:root{
+--bright-snow: #f8f9faff;
+--platinum: #e9ecefff;
+--alabaster-grey: #dee2e6ff;
+--pale-slate: #ced4daff;
+--pale-slate-2: #adb5bdff;
+--slate-grey: #6c757dff;
+--iron-grey: #495057ff;
+--gunmetal: #343a40ff;
+--carbon-black: #212529ff;
+}
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.dashboard{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "sidebar header"
+  "sidebar content";
+  row-gap: 5px;
+  background: var(--platinum);
+}
+
+.header{
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-inline: 32px;
+  padding-block: 5px ;
+  justify-items: stretch;
+  align-items: center;
+  column-gap: 32px;
+  background-color: var(--bright-snow);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.645);
+}
+.header > .searchbar{
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.header > .searchbar > #search_bar{
+  background-color: var(--platinum);
+  border: none;
+  border-radius: 50px;
+  height: 24px;
+  width: 100%;
+  padding-inline: 16px;
+}
+.header > .header-functions--extras{
+  grid-column-start: 2 / 3;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  justify-self: end;
+  gap: 32px;
+}
+.header > .header-functions--extras > .user-profile--primary{
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+.header > .user-greetings{
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+}
+.header > .user-greetings > .user-profile--secondary{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  grid-column: 1 / 2;
+}
+.header > .user-greetings > .user-profile--secondary > img, .header > .header-functions--extras > .user-profile--primary > img{
+  width: 100%;
+  object-fit: cover;
+}
+.header > .user-actions{
+
+  justify-self: stretch;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: 32px;
+  gap: 10px;
+}
+.header > .user-actions > button{
+  background-color: var(--gunmetal);
+  color: var(--bright-snow);
+  font-weight: 700;
+  border-radius: 32px;
+  border: none;
+}
+.content{
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding-inline: 16px;
+  padding-block: 16px;
+  gap: 16px;
+  background-color: var(--platinum);
+}
+
+.projects-container > .projects-cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 16px;
+
+}
+.projects-container > .projects-container--heading{
+  margin-bottom: 16px;
+}
+.projects-container > .projects-cards > .projects-card{
+  background-color: var(--bright-snow);
+  color: var(--carbon-black);
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  border-left: 8px solid var(--carbon-black);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.31);
+}
+.projects-container > .projects-cards > .projects-card > .card-features{
+  justify-self:  end;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.others {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+}
+.others > .announcements-container > .announcements-heading{
+  margin-bottom: 16px;
+}
+.others > .announcements-container > .announcements{
+  background-color: var(--bright-snow);
+  width: 320px;
+  height: 332px;
+  border-radius: 16px;
+  padding: 8px;
+  padding-block: 16px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.31);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-flow: row;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  align-items: center;
+}
+.others > .announcements-container > .announcements >.announcement{
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.others > .announcements-container > .announcements >.announcement:hover{
+  background-color:rgba(52, 58, 64, 0.048)
+}
+
+.others > .announcements-container > .announcements >.announcement > p{
+   display: -webkit-box;
+  -webkit-line-clamp: 3;   /* change 2 to 3 if you want more lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.others > .trending-container > .trending-heading{
+  margin-block: 16px;
+}
+.others > .trending-container > .trending{
+  background-color: var(--bright-snow);
+  border-radius: 16px;
+  padding: 16px 32px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.31);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-flow: row;
+  gap: 16px;
+}
+
+.others > .trending-container > .trending > .trending-user{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+}
+.others > .trending-container > .trending > .trending-user > .user-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  grid-row: span 2;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  display: grid;
+  grid-template-rows: 162px 1fr 1fr;
+  background-color:  var(--gunmetal);
+  color: var(--bright-snow);
+  align-items: start;
+  padding: 20px;
+}
+.sidebar > .top{
+  display: grid;
+  grid-template-columns: auto 2fr;
+  font-size: 24px;
+  gap: 16px;
+  align-items: center;
+}
+.sidebar > .top > .logo{
+  width: 50px;
+  height: 50px;
+}
+.sidebar > .middle, .sidebar > .bottom{
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 24px;
+  font-weight: 600  ;
+}
+.sidebar > .middle > div, .sidebar > .bottom > div{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  justify-items: start;
+  font-size: 20px;
+}
